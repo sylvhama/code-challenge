@@ -1,14 +1,14 @@
 .Text {
-  font-weight: var(--p-font-weight-regular);
-  letter-spacing: var(--p-letter-spacing-regular);
+  font-weight: var(--c-font-weight-regular);
+  letter-spacing: var(--c-letter-spacing-regular);
 }
 
 .Text.Regular {
-  font-size: var(--p-font-size-regular);
-  line-height: var(--p-line-height-regular);
+  font-size: var(--c-font-size-regular);
+  line-height: var(--c-line-height-regular);
 }
 
 .Text.Small {
-  font-size: var(--p-font-size-small);
-  line-height: var(--p-line-height-small);
+  font-size: var(--c-font-size-small);
+  line-height: var(--c-line-height-small);
 }

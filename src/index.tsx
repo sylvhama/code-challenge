@@ -7,14 +7,12 @@ import "./styles.css";
 
 const rootElement = document.getElementById("root");
 
-if (rootElement) {
-  const root = createRoot(rootElement);
+const root = createRoot(rootElement!);
 
-  root.render(
-    <StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </StrictMode>
-  );
-}
+root.render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
+);

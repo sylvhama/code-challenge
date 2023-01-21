@@ -34,6 +34,48 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      (function () {
+        function getThemeMode() {
+          // const savedMode = window.localStorage.getItem("mode");
+          // if (savedMode) return savedMode;
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          }
+          if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+            return "light";
+          }
+          return "dark";
+        }
+
+        const mode = getThemeMode();
+        const root = document.documentElement;
+        const colors = {
+          dark: {
+            text: "#F2F2F2",
+            grey1: "#B0B0B0",
+            grey2: "#383838",
+            grey3: "#222222",
+            background: "#151515",
+            critical: "#E75B4F",
+          },
+          light: {
+            text: "#151515",
+            grey1: "#515151",
+            grey2: "#D1D1D1",
+            grey3: "#EEEEEE",
+            background: "#FFFFFF",
+            critical: "#D62617",
+          },
+        };
+        root.style.setProperty("--c-text-color", colors[mode].text);
+        root.style.setProperty("--c-grey1", colors[mode].grey1);
+        root.style.setProperty("--c-grey2", colors[mode].grey2);
+        root.style.setProperty("--c-grey3", colors[mode].grey3);
+        root.style.setProperty("--c-background", colors[mode].background);
+        root.style.setProperty("--c-critical", colors[mode].critical);
+      })();
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
