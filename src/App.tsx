@@ -1,10 +1,19 @@
-import "./styles.css";
+import { Routes, Route } from "react-router-dom";
+
+import { Home } from "pages/Home";
+import { Kanban } from "pages/Kanban";
+import { NoMatch } from "pages/NoMatch";
+
+import { Layout } from "components/Layout";
 
 export function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="kanban" element={<Kanban />} />
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
   );
 }

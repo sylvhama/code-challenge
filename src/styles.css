@@ -15,8 +15,31 @@
   --p-letter-spacing-large: -0.05em;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 html,
@@ -27,4 +50,5 @@ body {
   font-size: 16px;
   line-height: var(--p-line-height-regular);
   letter-spacing: var(--p-letter-spacing-regular);
+  -webkit-font-smoothing: antialiased;
 }

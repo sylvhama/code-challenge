@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*"],
+  "include": ["src", "./src/components/", "./src/pages/"],
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,
@@ -15,6 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": "src"
   }
 }
