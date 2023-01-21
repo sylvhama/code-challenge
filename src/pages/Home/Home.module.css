@@ -20,3 +20,10 @@
   padding-bottom: var(--c-spacing-extra-large);
   max-width: 18ch;
 }
+
+.FormGrid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--c-spacing-regular);
+  align-items: flex-start;
+}

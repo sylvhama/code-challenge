@@ -1,0 +1,20 @@
+.TextField {
+  border: 1px solid transparent;
+  border-bottom-color: var(--c-text-color);
+  padding: var(--c-spacing-small) 0;
+  width: 100%;
+  color: var(--c-text-color);
+  line-height: var(--c-line-height-input);
+  background-color: transparent;
+  appearance: none;
+}
+
+.TextField:focus {
+  outline-color: currentColor;
+  outline-offset: var(--c-spacing-small);
+}
+
+.Error {
+  padding-top: var(--c-spacing-regular);
+  color: var(--c-critical);
+}

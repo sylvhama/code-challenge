@@ -10,13 +10,18 @@
   --c-line-height-small: 0.9375rem; /* 15px */
   --c-line-height-regular: 160%;
   --c-line-height-large: 120%; /* Figma says 100% but the designs uses a different value */
+  --c-line-height-input: 1.4;
 
   --c-letter-spacing-regular: -0.0125em;
   --c-letter-spacing-large: -0.05em;
 
-  --c-spacing-regular: 1rem;
-  --c-spacing-large: 2rem;
-  --c-spacing-extra-large: 6rem;
+  --c-spacing-small: 0.5rem; /* 8px */
+  --c-spacing-regular: 1rem; /* 16px */
+  --c-spacing-medium: 1.5rem; /* 24px */
+  --c-spacing-large: 1.75rem; /* 28px */
+  --c-spacing-extra-large: 6rem; /* 96px */
+
+  --c-border-radius: 4px;
 }
 
 *,

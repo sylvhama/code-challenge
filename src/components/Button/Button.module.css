@@ -1,0 +1,31 @@
+.Button {
+  border: 1px solid var(--c-grey3);
+  padding: var(--c-spacing-small) var(--c-spacing-regular);
+  color: var(--c-text-color);
+  background-color: var(--c-grey3);
+  border-radius: var(--c-border-radius);
+  line-height: var(--c-line-height-input);
+  transition: color ease var(--c-transition-duration),
+    border-color ease var(--c-transition-duration),
+    background-color ease var(--c-transition-duration);
+}
+
+.Button:focus {
+  outline-color: currentColor;
+  outline-offset: var(--c-spacing-small);
+  background-color: var(--c-grey2);
+  border-color: var(--c-grey2);
+}
+
+.Button:hover {
+  background-color: var(--c-grey2);
+  border-color: var(--c-grey2);
+}
+
+.Button.FullWidth {
+  width: 100%;
+}
+
+.Button.Large {
+  padding: var(--c-spacing-medium) var(--c-spacing-large);
+}
