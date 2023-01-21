@@ -1,0 +1,22 @@
+.HomeGrid {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--c-spacing-large);
+}
+
+.Logo {
+  position: relative;
+  top: -0.5rem;
+}
+
+.Content {
+  width: 53vw;
+}
+
+.Content h1 {
+  padding-bottom: var(--c-spacing-extra-large);
+  max-width: 18ch;
+}

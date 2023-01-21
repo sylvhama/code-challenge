@@ -7,6 +7,6 @@ interface Props {
 
 type HeadingTags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-export function Heading({ children, tag: HeadingTag = "h2" }: Props) {
+export function Heading({ children, tag: HeadingTag = "h1" }: Props) {
   return <HeadingTag className={styles.Heading}>{children}</HeadingTag>;
 }
