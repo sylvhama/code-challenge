@@ -1,4 +1,30 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+:root {
+  --p-font-weight-regular: 400;
+  --p-font-weight-bold: 600;
+
+  --p-font-size-extra-small: 0.75rem; /* 12px */
+  --p-font-size-small: 0.875rem; /* 14px */
+  --p-font-size-regular: 1rem; /* 16px */
+  --p-font-size-large: 3rem; /* 48px */
+
+  --p-line-height-small: 0.9375rem; /* 15px */
+  --p-line-height-regular: 160%;
+  --p-line-height-large: 100%;
+
+  --p-letter-spacing-regular: -0.0125em;
+  --p-letter-spacing-large: -0.05em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: var(--p-font-weight-regular);
+  font-size: 16px;
+  line-height: var(--p-line-height-regular);
+  letter-spacing: var(--p-letter-spacing-regular);
 }

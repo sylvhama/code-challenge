@@ -1,0 +1,6 @@
+.Heading {
+  font-weight: var(--p-font-weight-bold);
+  font-size: var(--p-font-size-large);
+  line-height: var(--p-line-height-large);
+  letter-spacing: var(--p-letter-spacing-large);
+}
