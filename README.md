@@ -1,3 +1,6 @@
+- Demo: https://sandpack.netlify.app/
+- Edit on CodeSandbox: https://codesandbox.io/s/github/sylvhama/code-challenge
+
 ## Notes
 
 - Created with CodeSandbox;
@@ -19,3 +22,4 @@
 - We should have a proper icon system that can import each icon idenpendently;
 - When moving a branch to another column we should keep the focus on the button;
 - Long branch names create very large buttons, all buttons end up with different heights;
+- Stars: we could have a skeleton when they are loading, we should be able to click to star/unstar;
