@@ -29,7 +29,7 @@ export function Home() {
     const [nextOwner, nextRepo] = extractGitHubRepoPath(url);
 
     if (!nextOwner || !nextRepo) {
-      setFormError("Please input a valid GitHub repo URL.");
+      return setFormError("Please input a valid GitHub repo URL.");
     }
 
     setOwner(nextOwner);
@@ -38,7 +38,9 @@ export function Home() {
 
   return (
     <div className={styles.Wrapper}>
-      {data && owner && repo && <Navigate to={`${owner}/${repo}`} />}
+      {Boolean(data && owner && repo) && (
+        <Navigate replace to={`${owner}/${repo}`} />
+      )}
       <div className={styles.HomeGrid}>
         <Logo className={styles.Logo} />
         <div className={styles.Content}>

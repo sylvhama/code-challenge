@@ -27,11 +27,11 @@ export function Text({
   children,
   id,
   color,
-  tag: TextTag = "p",
+  tag: Element = "p",
   size = "regular",
 }: Props) {
   return (
-    <TextTag
+    <Element
       id={id}
       className={classNames({
         [styles.Text]: true,
@@ -44,6 +44,6 @@ export function Text({
       })}
     >
       {children}
-    </TextTag>
+    </Element>
   );
 }
