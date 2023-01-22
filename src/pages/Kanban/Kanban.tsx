@@ -76,7 +76,7 @@ export function Kanban() {
       <div className={styles.KanbanGrid}>
         <section aria-describedby={idCol1}>
           <Text id={idCol1} tag="h2" size="extra-small" color="grey1">
-            In progress
+            In progress ({inProgress.length})
           </Text>
           <List
             branches={inProgress}
@@ -87,7 +87,7 @@ export function Kanban() {
         </section>
         <section aria-describedby={idCol2}>
           <Text id={idCol2} tag="h2" size="extra-small" color="grey1">
-            Review
+            Review ({inReview.length})
           </Text>
           <List
             branches={inReview}
@@ -108,7 +108,7 @@ export function Kanban() {
         </section>
         <section aria-describedby={idCol3}>
           <Text id={idCol3} tag="h2" size="extra-small" color="grey1">
-            Ready to merge
+            Ready to merge ({inReady.length})
           </Text>
           <List
             branches={inReady}
