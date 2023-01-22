@@ -18,4 +18,4 @@
 - First time using React Query so not sure if relying on `getQueryData` is a good practice;
 - We should have a proper icon system that can import each icon idenpendently;
 - When moving a branch to another column we should keep the focus on the button;
-- Long branch names create very large buttons;
+- Long branch names create very large buttons, all buttons end up with different heights;

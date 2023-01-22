@@ -1,13 +1,14 @@
 import { Navigate } from "react-router-dom";
+import { useDocumentTitle } from "usehooks-ts";
+import { useState } from "react";
 
 import { Text } from "components/Text";
 import { Button } from "components/Button";
 import { Logo } from "components/Logo";
 import { TextField } from "components/TextField";
-import styles from "./Home.module.css";
-import { useState } from "react";
 import { useGetBranches } from "hooks/useGetBranches";
-import { useDocumentTitle } from "usehooks-ts";
+
+import styles from "./Home.module.css";
 
 const hasToken = Boolean(process.env.REACT_APP_GITHUB_TOKEN);
 

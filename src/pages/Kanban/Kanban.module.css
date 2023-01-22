@@ -1,10 +1,18 @@
 .Wrapper {
+  position: relative;
   margin: 0 auto;
   padding: var(--c-spacing-extra-large) var(--c-spacing-large)
     var(--c-spacing-large);
   max-width: 1112px;
   display: grid;
   place-items: center;
+}
+
+.Wrapper .Link {
+  position: absolute;
+  top: var(--c-spacing-extra-large);
+  left: var(--c-spacing-large);
+  color: currentColor;
 }
 
 .Wrapper header p {

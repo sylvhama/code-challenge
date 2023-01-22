@@ -1,11 +1,13 @@
-import { Navigate, useParams } from "react-router-dom";
-
-import { Text } from "components/Text";
-import styles from "./Kanban.module.css";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 import { useLocalStorage, useDocumentTitle } from "usehooks-ts";
+
+import { Text } from "components/Text";
+import { Icon } from "components/Icon";
+
 import { Names } from "./types";
 import { List } from "./components";
+import styles from "./Kanban.module.css";
 
 interface Data {
   commit: { sha: string; url: string };
@@ -58,6 +60,9 @@ export function Kanban() {
 
   return (
     <div className={styles.Wrapper}>
+      <Link to="/" aria-label="Home" className={styles.Link}>
+        <Icon source="left-arrow" />
+      </Link>
       <header>
         <Text tag="h1" size="large">
           sandpack
