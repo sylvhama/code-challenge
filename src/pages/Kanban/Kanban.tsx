@@ -1,5 +1,4 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { useQueryClient } from "@tanstack/react-query";
 import { useLocalStorage, useDocumentTitle } from "usehooks-ts";
 
 import { Text } from "components/Text";
@@ -8,12 +7,7 @@ import { Icon } from "components/Icon";
 import { Names } from "./types";
 import { List, Stars } from "./components";
 import styles from "./Kanban.module.css";
-
-interface Data {
-  commit: { sha: string; url: string };
-  name: string;
-  protected: boolean;
-}
+import { useGetBranches } from "hooks/useGetBranches";
 
 const idCol1 = "kanban-col-1";
 const idCol2 = "kanban-col-2";
@@ -23,12 +17,10 @@ export function Kanban() {
   useDocumentTitle("sandpack - Kanban");
 
   const params = useParams();
-  const queryClient = useQueryClient();
-  const queryCache = queryClient.getQueryData<{ data: Data[] }>([
-    "branches",
-    params.owner,
-    params.repo,
-  ]);
+  const { data, isError, loading } = useGetBranches(
+    params.owner || "",
+    params.repo || ""
+  );
   const path = `${params.owner}/${params.repo}`;
   const [storedInReview, seStoredtInReview] = useLocalStorage<Names>(
     `${path}/review`,
@@ -39,16 +31,17 @@ export function Kanban() {
     []
   );
 
-  if (!queryCache || !params.owner || !params.repo) {
+  if (isError || !params.owner || !params.repo) {
     return <Navigate to="/" replace />;
   }
 
-  const { data } = queryCache;
+  if (loading) return null;
+
   const inProgress: Names = [];
   const inReview: Names = [];
   const inReady: Names = [];
 
-  data.forEach(({ name }) => {
+  data?.data.forEach(({ name }) => {
     if (storedInReview.includes(name)) {
       inReview.push(name);
     } else if (storedInReady.includes(name)) {

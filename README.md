@@ -18,7 +18,7 @@
 - Each page has its own wrapper CSS, we could explore how to leverage `Layout` to handle that or at least have a shared `Page` component;
 - Of course we need automatic tests;
 - Not sure if using a Context for Octokit is optimum;
-- First time using React Query so not sure if relying on `getQueryData` is a good practice, the cache does not persist on reload but I did not want to re-implement a full loading / error state;
+- We need a proper loading and error state when directly loading / reloading Kanban page;
 - We should have a proper icon system that can import each icon independently;
 - When moving a branch to another column we should keep the focus on the button;
 - Long branch names create very large buttons, all buttons end up with different heights;
