@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useCallback } from "react";
-import { useOctokit } from "./useOctokit";
+import { useOctokit } from "hooks/useOctokit";
 
 export function useGetBranches(owner: string, repo: string) {
   const octokit = useOctokit();

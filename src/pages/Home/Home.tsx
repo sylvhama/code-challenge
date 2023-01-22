@@ -6,7 +6,7 @@ import { Logo } from "components/Logo";
 import { TextField } from "components/TextField";
 import styles from "./Home.module.css";
 import { useState } from "react";
-import { useGetBranches } from "hooks/useBranches";
+import { useGetBranches } from "hooks/useGetBranches";
 
 const hasToken = Boolean(process.env.REACT_APP_GITHUB_TOKEN);
 
@@ -70,7 +70,7 @@ export function Home() {
   );
 }
 
-export function extractGitHubRepoPath(url: string) {
+function extractGitHubRepoPath(url: string) {
   if (!url) return [];
 
   const match = url.match(

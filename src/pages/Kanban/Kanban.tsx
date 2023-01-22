@@ -10,6 +10,10 @@ interface Data {
   protected: boolean;
 }
 
+const idCol1 = "kanban-col-1";
+const idCol2 = "kanban-col-2";
+const idCol3 = "kanban-col-3";
+
 export function Kanban() {
   const params = useParams();
   const queryClient = useQueryClient();
@@ -24,10 +28,6 @@ export function Kanban() {
   }
 
   const { data } = queryCache;
-
-  const idCol1 = "kanban-col-1";
-  const idCol2 = "kanban-col-2";
-  const idCol3 = "kanban-col-3";
 
   return (
     <div className={styles.Wrapper}>

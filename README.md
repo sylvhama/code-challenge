@@ -15,3 +15,4 @@
 - Each page has its own wrapper CSS, we could explore how to leverage `Layout` to handle that or at least have a shared `Page` component;
 - Of course we need automatic tests;
 - Not sure if using a Context for Octokit is optimum;
+- First time using React Query so not sure if relying on `getQueryData` is a good practice;
