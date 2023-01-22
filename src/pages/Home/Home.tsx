@@ -7,10 +7,13 @@ import { TextField } from "components/TextField";
 import styles from "./Home.module.css";
 import { useState } from "react";
 import { useGetBranches } from "hooks/useGetBranches";
+import { useDocumentTitle } from "usehooks-ts";
 
 const hasToken = Boolean(process.env.REACT_APP_GITHUB_TOKEN);
 
 export function Home() {
+  useDocumentTitle("sandpack - Home");
+
   const [url, setUrl] = useState("");
   const [formError, setFormError] = useState("");
   const [owner, setOwner] = useState("");

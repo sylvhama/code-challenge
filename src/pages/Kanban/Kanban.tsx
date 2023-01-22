@@ -3,6 +3,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { Text } from "components/Text";
 import styles from "./Kanban.module.css";
 import { useQueryClient } from "@tanstack/react-query";
+import { useLocalStorage, useDocumentTitle } from "usehooks-ts";
 
 interface Data {
   commit: { sha: string; url: string };
@@ -15,6 +16,8 @@ const idCol2 = "kanban-col-2";
 const idCol3 = "kanban-col-3";
 
 export function Kanban() {
+  useDocumentTitle("sandpack - Kanban");
+
   const params = useParams();
   const queryClient = useQueryClient();
   const queryCache = queryClient.getQueryData<{ data: Data }>([
