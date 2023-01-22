@@ -10,6 +10,5 @@
 - There must be a more performant way to import / cache Google Fonts;
 - Dark / Light mode could be stored in a Context plus Local Storage so user could change it without changing its OS settings;
 - `Heading`: we could have a global context to detect the right heading level;
-- `Text`: we could support more semantic tags sucgh as `strong` or `em`;
 - We could explore new viewport units to avoif the `-webkit-fill-available` trick;
 - The app is not mobile / small screen friendly, it would require some media queries to fix that;

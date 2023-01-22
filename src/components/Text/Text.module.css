@@ -10,5 +10,21 @@
 
 .Text.Small {
   font-size: var(--c-font-size-small);
+  line-height: var(--c-line-height-regular);
+}
+
+.Text.ExtraSmall {
+  font-size: var(--c-font-size-extra-small);
   line-height: var(--c-line-height-small);
+}
+
+.Text.Large {
+  font-weight: var(--c-font-weight-bold);
+  font-size: var(--c-font-size-large);
+  line-height: var(--c-line-height-large);
+  letter-spacing: var(--c-letter-spacing-large);
+}
+
+.Text.Grey1 {
+  color: var(--c-grey1);
 }

@@ -5,6 +5,7 @@
   background-color: var(--c-grey3);
   border-radius: var(--c-border-radius);
   line-height: var(--c-line-height-input);
+  cursor: pointer;
   transition: color ease var(--c-transition-duration),
     border-color ease var(--c-transition-duration),
     background-color ease var(--c-transition-duration);
