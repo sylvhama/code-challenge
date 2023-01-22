@@ -10,11 +10,6 @@
     background-color ease var(--c-transition-duration);
 }
 
-.Button:focus {
-  outline-color: currentColor;
-  outline-offset: var(--c-spacing-small);
-}
-
 .Button:not(.Button[aria-disabled="true"]):hover,
 .Button:not(.Button[aria-disabled="true"]):focus {
   background-color: var(--c-grey2);

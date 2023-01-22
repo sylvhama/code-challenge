@@ -36,6 +36,11 @@
   margin: 0;
 }
 
+*:focus {
+  outline-color: currentColor;
+  outline-offset: var(--c-spacing-small);
+}
+
 input,
 button,
 textarea,

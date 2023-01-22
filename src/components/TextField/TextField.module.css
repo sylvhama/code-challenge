@@ -9,11 +9,6 @@
   appearance: none;
 }
 
-.TextField:focus {
-  outline-color: currentColor;
-  outline-offset: var(--c-spacing-small);
-}
-
 .TextField:disabled {
   border-bottom-color: var(--c-grey1);
   color: var(--c-grey1);

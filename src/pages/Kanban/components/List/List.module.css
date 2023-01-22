@@ -14,7 +14,6 @@
   background-color: var(--c-grey3);
   border-radius: var(--c-border-radius);
   line-height: var(--c-line-height-input);
-  overflow: hidden;
   transition: color ease var(--c-transition-duration),
     background-color ease var(--c-transition-duration);
 }
@@ -32,11 +31,6 @@
   cursor: pointer;
 }
 
-.Item .ButtonStyle:focus {
-  outline-color: currentColor;
-  outline-offset: var(--c-spacing-small);
-}
-
 .Item button[aria-disabled="true"] {
   color: var(--c-grey2);
 }
@@ -44,4 +38,14 @@
 .Item span {
   padding: var(--c-spacing-medium) 0;
   word-break: break-all;
+}
+
+.Item button:first-child {
+  border-top-left-radius: var(--c-border-radius);
+  border-bottom-left-radius: var(--c-border-radius);
+}
+
+.Item button:last-child {
+  border-top-right-radius: var(--c-border-radius);
+  border-bottom-right-radius: var(--c-border-radius);
 }

@@ -13,6 +13,7 @@
   top: var(--c-spacing-extra-large);
   left: var(--c-spacing-large);
   color: currentColor;
+  outline-color: currentColor;
 }
 
 .Wrapper .Stars {
