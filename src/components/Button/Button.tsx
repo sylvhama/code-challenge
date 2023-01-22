@@ -25,11 +25,10 @@ export function Button({
       className={classNames({
         [styles.Button]: true,
         [styles.Large]: large,
-        [styles.fullWidth]: fullWidth,
+        [styles.FullWidth]: fullWidth,
       })}
       onClick={onClick}
-      type={submit ? "submit" : undefined}
-      disabled={disabled || loading}
+      type={submit ? "submit" : "button"}
       aria-disabled={disabled}
       aria-busy={loading}
     >

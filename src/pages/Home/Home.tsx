@@ -25,6 +25,10 @@ export function Home() {
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
+    if (loading) {
+      return;
+    }
+
     setOwner("");
     setRepo("");
     setFormError("");

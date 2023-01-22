@@ -4,6 +4,8 @@ import { Text } from "components/Text";
 import styles from "./Kanban.module.css";
 import { useQueryClient } from "@tanstack/react-query";
 import { useLocalStorage, useDocumentTitle } from "usehooks-ts";
+import { Names } from "./types";
+import { List } from "./components";
 
 interface Data {
   commit: { sha: string; url: string };
@@ -20,17 +22,39 @@ export function Kanban() {
 
   const params = useParams();
   const queryClient = useQueryClient();
-  const queryCache = queryClient.getQueryData<{ data: Data }>([
+  const queryCache = queryClient.getQueryData<{ data: Data[] }>([
     "branches",
     params.owner,
     params.repo,
   ]);
+  const path = `${params.owner}/${params.repo}`;
+  const [storedInReview, seStoredtInReview] = useLocalStorage<Names>(
+    `${path}/review`,
+    []
+  );
+  const [storedInReady, setStoredInReady] = useLocalStorage<Names>(
+    `${path}/ready`,
+    []
+  );
 
   if (!queryCache) {
     return <Navigate to="/" replace />;
   }
 
   const { data } = queryCache;
+  const inProgress: Names = [];
+  const inReview: Names = [];
+  const inReady: Names = [];
+
+  data.forEach(({ name }) => {
+    if (storedInReview.includes(name)) {
+      inReview.push(name);
+    } else if (storedInReady.includes(name)) {
+      inReady.push(name);
+    } else {
+      inProgress.push(name);
+    }
+  });
 
   return (
     <div className={styles.Wrapper}>
@@ -48,16 +72,48 @@ export function Kanban() {
           <Text id={idCol1} tag="h2" size="extra-small" color="grey1">
             In progress
           </Text>
+          <List
+            branches={inProgress}
+            onRightClick={(clickedBranch: string) => {
+              seStoredtInReview([clickedBranch, ...inReview]);
+            }}
+          />
         </section>
         <section aria-describedby={idCol2}>
           <Text id={idCol2} tag="h2" size="extra-small" color="grey1">
             Review
           </Text>
+          <List
+            branches={inReview}
+            onLeftClick={(clickedBranch: string) => {
+              const filteredInReview = inReview.filter((inReviewBranch) => {
+                return inReviewBranch !== clickedBranch;
+              });
+              seStoredtInReview(filteredInReview);
+            }}
+            onRightClick={(clickedBranch: string) => {
+              const filteredInReview = inReview.filter((inReviewBranch) => {
+                return inReviewBranch !== clickedBranch;
+              });
+              seStoredtInReview(filteredInReview);
+              setStoredInReady([clickedBranch, ...inReady]);
+            }}
+          />
         </section>
         <section aria-describedby={idCol3}>
           <Text id={idCol3} tag="h2" size="extra-small" color="grey1">
             Ready to merge
           </Text>
+          <List
+            branches={inReady}
+            onLeftClick={(clickedBranch: string) => {
+              const filteredInReady = inReady.filter((inReadyBranch) => {
+                return inReadyBranch !== clickedBranch;
+              });
+              setStoredInReady(filteredInReady);
+              seStoredtInReview([clickedBranch, ...inReview]);
+            }}
+          />
         </section>
       </div>
     </div>

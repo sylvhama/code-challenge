@@ -1,0 +1,46 @@
+.List {
+  padding: 0;
+  display: grid;
+  gap: var(--c-spacing-regular);
+  list-style: none;
+}
+
+.Item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  text-align: center;
+
+  color: var(--c-text-color);
+  background-color: var(--c-grey3);
+  border-radius: var(--c-border-radius);
+  line-height: var(--c-line-height-input);
+  transition: color ease var(--c-transition-duration),
+    background-color ease var(--c-transition-duration);
+}
+
+.Item:hover,
+.Item:focus-within {
+  background-color: var(--c-grey2);
+}
+
+.Item .ButtonStyle {
+  border: 0;
+  padding: var(--c-spacing-medium) var(--c-spacing-large);
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.Item .ButtonStyle:focus {
+  outline-color: currentColor;
+  outline-offset: var(--c-spacing-small);
+}
+
+.Item button[aria-disabled="true"] {
+  color: var(--c-grey2);
+}
+
+.Item span {
+  padding: var(--c-spacing-medium) 0;
+  word-break: break-all;
+}

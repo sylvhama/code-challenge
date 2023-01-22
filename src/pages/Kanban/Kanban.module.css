@@ -16,6 +16,10 @@
 .KanbanGrid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--c-spacing-regular);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--c-spacing-medium);
+}
+
+.KanbanGrid h2 {
+  padding-bottom: var(--c-spacing-medium);
 }
