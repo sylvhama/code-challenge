@@ -6,7 +6,7 @@ import { Text } from "components/Text";
 import { Icon } from "components/Icon";
 
 import { Names } from "./types";
-import { List } from "./components";
+import { List, Stars } from "./components";
 import styles from "./Kanban.module.css";
 
 interface Data {
@@ -39,7 +39,7 @@ export function Kanban() {
     []
   );
 
-  if (!queryCache) {
+  if (!queryCache || !params.owner || !params.repo) {
     return <Navigate to="/" replace />;
   }
 
@@ -63,6 +63,7 @@ export function Kanban() {
       <Link to="/" aria-label="Home" className={styles.Link}>
         <Icon source="left-arrow" />
       </Link>
+      <Stars className={styles.Stars} repo={params.repo} owner={params.owner} />
       <header>
         <Text tag="h1" size="large">
           sandpack

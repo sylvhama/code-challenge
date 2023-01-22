@@ -15,6 +15,12 @@
   color: currentColor;
 }
 
+.Wrapper .Stars {
+  position: absolute;
+  top: var(--c-spacing-extra-large);
+  right: var(--c-spacing-large);
+}
+
 .Wrapper header p {
   padding-top: var(--c-spacing-medium);
   padding-bottom: var(--c-spacing-extra-large);

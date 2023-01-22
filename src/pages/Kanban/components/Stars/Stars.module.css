@@ -1,0 +1,5 @@
+.Stars {
+  display: flex;
+  gap: var(--c-spacing-small);
+  align-items: center;
+}

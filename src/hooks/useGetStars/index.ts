@@ -1,0 +1,1 @@
+export { useGetStars } from "./useGetStars";
