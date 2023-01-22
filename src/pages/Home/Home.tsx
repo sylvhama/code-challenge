@@ -46,9 +46,7 @@ export function Home() {
 
   return (
     <div className={styles.Wrapper}>
-      {Boolean(data && owner && repo) && (
-        <Navigate replace to={`${owner}/${repo}`} />
-      )}
+      {Boolean(data && owner && repo) && <Navigate to={`${owner}/${repo}`} />}
       <div className={styles.HomeGrid}>
         <Logo className={styles.Logo} />
         <div className={styles.Content}>
