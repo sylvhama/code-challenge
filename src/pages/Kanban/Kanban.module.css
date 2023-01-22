@@ -1,6 +1,8 @@
 .Wrapper {
-  padding: var(--c-spacing-extra-large) var(--c-spacing-regular)
-    var(--c-spacing-regular);
+  margin: 0 auto;
+  padding: var(--c-spacing-extra-large) var(--c-spacing-large)
+    var(--c-spacing-large);
+  max-width: 1112px;
   display: grid;
   place-items: center;
 }
@@ -12,9 +14,7 @@
 }
 
 .KanbanGrid {
-  margin: 0 auto;
   width: 100%;
-  max-width: 1112px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--c-spacing-regular);

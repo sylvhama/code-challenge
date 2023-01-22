@@ -5,7 +5,6 @@
   background-color: var(--c-grey3);
   border-radius: var(--c-border-radius);
   line-height: var(--c-line-height-input);
-  cursor: pointer;
   transition: color ease var(--c-transition-duration),
     border-color ease var(--c-transition-duration),
     background-color ease var(--c-transition-duration);
@@ -14,13 +13,18 @@
 .Button:focus {
   outline-color: currentColor;
   outline-offset: var(--c-spacing-small);
-  background-color: var(--c-grey2);
-  border-color: var(--c-grey2);
 }
 
-.Button:hover {
+.Button:not(.Button[aria-disabled="true"]):hover,
+.Button:not(.Button[aria-disabled="true"]):focus {
   background-color: var(--c-grey2);
   border-color: var(--c-grey2);
+  cursor: pointer;
+}
+
+.Button.Button[aria-disabled="true"] {
+  background-color: var(--c-grey1);
+  cursor: not-allowed;
 }
 
 .Button.FullWidth {

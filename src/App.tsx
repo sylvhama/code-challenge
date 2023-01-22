@@ -11,7 +11,7 @@ export function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="kanban" element={<Kanban />} />
+        <Route path=":owner/:repo" element={<Kanban />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>

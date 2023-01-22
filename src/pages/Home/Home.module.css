@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: var(--c-spacing-regular);
+  padding: var(--c-spacing-large);
 }
 
 .HomeGrid {
@@ -30,6 +30,7 @@
 }
 
 .FormGrid {
+  min-height: 5.25rem;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: var(--c-spacing-regular);

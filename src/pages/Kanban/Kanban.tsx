@@ -1,7 +1,30 @@
+import { Navigate, useParams } from "react-router-dom";
+
 import { Text } from "components/Text";
 import styles from "./Kanban.module.css";
+import { useQueryClient } from "@tanstack/react-query";
+
+interface Data {
+  commit: { sha: string; url: string };
+  name: string;
+  protected: boolean;
+}
 
 export function Kanban() {
+  const params = useParams();
+  const queryClient = useQueryClient();
+  const queryCache = queryClient.getQueryData<{ data: Data }>([
+    "branches",
+    params.owner,
+    params.repo,
+  ]);
+
+  if (!queryCache) {
+    return <Navigate to="/" replace />;
+  }
+
+  const { data } = queryCache;
+
   const idCol1 = "kanban-col-1";
   const idCol2 = "kanban-col-2";
   const idCol3 = "kanban-col-3";

@@ -7,7 +7,7 @@ interface Props {
   id?: string;
   tag?: PossibleTags;
   size?: "extra-small" | "small" | "regular" | "large";
-  color?: "grey1";
+  color?: "grey1" | "critical";
 }
 
 type PossibleTags =
@@ -40,6 +40,7 @@ export function Text({
         [styles.Small]: size === "small",
         [styles.ExtraSmall]: size === "extra-small",
         [styles.Grey1]: color === "grey1",
+        [styles.Critical]: color === "critical",
       })}
     >
       {children}

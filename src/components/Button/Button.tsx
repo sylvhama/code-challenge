@@ -3,6 +3,7 @@ import styles from "./Button.module.css";
 
 interface Props {
   children: React.ReactNode;
+  onClick?: () => void;
   submit?: boolean;
   loading?: boolean;
   disabled?: boolean;
@@ -12,6 +13,7 @@ interface Props {
 
 export function Button({
   children,
+  onClick,
   submit = false,
   loading = false,
   disabled = false,
@@ -25,8 +27,10 @@ export function Button({
         [styles.Large]: large,
         [styles.fullWidth]: fullWidth,
       })}
+      onClick={onClick}
       type={submit ? "submit" : undefined}
-      aria-disabled={loading || disabled}
+      disabled={disabled || loading}
+      aria-disabled={disabled}
       aria-busy={loading}
     >
       {loading ? <span aria-live="polite">Loading...</span> : children}

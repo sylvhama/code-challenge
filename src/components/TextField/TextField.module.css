@@ -14,7 +14,12 @@
   outline-offset: var(--c-spacing-small);
 }
 
-.Error {
-  padding-top: var(--c-spacing-regular);
-  color: var(--c-critical);
+.TextField:disabled {
+  border-bottom-color: var(--c-grey1);
+  color: var(--c-grey1);
+  cursor: not-allowed;
+}
+
+.TextField.HasError {
+  margin-bottom: var(--c-spacing-regular);
 }

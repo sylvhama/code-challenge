@@ -28,3 +28,7 @@
 .Text.Grey1 {
   color: var(--c-grey1);
 }
+
+.Text.Critical {
+  color: var(--c-critical);
+}
