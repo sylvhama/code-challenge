@@ -1,3 +1,5 @@
+This was a coding challenge made in roughly 14 hours fo work. 
+
 - Demo: https://sandpack.netlify.app/
 - Edit on CodeSandbox: https://codesandbox.io/s/github/sylvhama/code-challenge
 
@@ -21,5 +23,7 @@
 - We need a proper loading and error state when directly loading / reloading Kanban page;
 - We should have a proper icon system that can import each icon independently;
 - When moving a branch to another column we should keep the focus on the button;
+- The kankan logic has some issues when changing columns;
 - Long branch names create very large buttons, all buttons end up with different heights;
 - Stars: we could have a skeleton when they are loading, we should be able to click to star/unstar;
+- We could add Drag & Drop support: https://dndkit.com/;
